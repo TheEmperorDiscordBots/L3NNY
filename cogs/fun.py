@@ -6,7 +6,6 @@ import asyncio
 import aiohttp
 import random
 import json
-import idioticapi
 from discord.ext import commands
 
 
