@@ -19,8 +19,8 @@ class fun:
         
         
     @commands.command()
-    async def annoy(self, ctx, user: discord.Member):
-        """ping someone"""
+    async def meme(self, ctx, user: discord.Member):
+        """a meme animation"""
         msg = await ctx.send(f"i")
         await asyncio.sleep(2)
         await msg.edit(content="im")
