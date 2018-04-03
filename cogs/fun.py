@@ -21,23 +21,23 @@ class fun:
     @commands.command()
     async def annoy(self, ctx, user: discord.Member):
         """ping someone"""
-        msg = await ctx.send(f"rip {user}")
+        msg = await ctx.send(f"i")
         await asyncio.sleep(2)
-        await msg.edit(content="{user.mention}")
+        await msg.edit(content="im")
         await asyncio.sleep(2)
-        await msg.edit(content="{user.mention}")
+        await msg.edit(content="im a")
         await asyncio.sleep(2)
-        await msg.edit(content="{user.mention}")
+        await msg.edit(content="im a M")
         await asyncio.sleep(2)
-        await msg.edit(content="{user.mention}")
+        await msg.edit(content="im a ME")
         await asyncio.sleep(2)
-        await msg.edit(content="{user.mention}")
+        await msg.edit(content="im a MEM")
         await asyncio.sleep(3)
-        await msg.edit(content="{user.mention}")
+        await msg.edit(content="im a MEME")
         await asyncio.sleep(3)
-        await msg.edit(content="{user.mention}")
+        await msg.edit(content="IM A MEME BOYZZZZ LMAOOOO XDDD")
         await asyncio.sleep(4)
-        await msg.edit(content=f"{user.mention} {user.mention} {user.mention} {user.mention} {user.mention} {user.mention} rip")   
+        await msg.edit(content=f"lmao xd")   
         
         
        
