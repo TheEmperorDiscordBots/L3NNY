@@ -18,7 +18,7 @@ class Info:
         color = discord.Color(value=0xffffff)
         em = discord.Embed(color=color, title='Info')
         em.description = "My sweet, sweet info!"
-        em.set_thumbnail(url="https://cdn.discordapp.com/avatars/414456650519412747/ede4bd62db1db6719bbbda4aa78a9344.webp?size=1024")        
+        em.set_thumbnail(url="https://bit.ly/2q4pS0z")        
         em.add_field(name='Owner', value='TheEmperor™#2644')
         em.add_field(name='Developer(s)', value='dat eric kang boi#0847')
         em.add_field(name='Number of Servers', value=f'{len(self.bot.guilds)} servers') 
