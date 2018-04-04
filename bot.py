@@ -86,6 +86,13 @@ async def invite(ctx):
 
     
 @bot.command()
+async def say(ctx, *, message:str):
+    """Speak as me!"""
+    await ctx.message.delete()
+    await ctx.send(message)    
+
+
+@bot.command()
 async def upvote(ctx):
     """Upvote me!"""
     await ctx.send ("Upvote me here! https://discordbots.org/bot/414456650519412747") 
