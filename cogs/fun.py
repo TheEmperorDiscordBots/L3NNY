@@ -32,9 +32,9 @@ class fun:
         await msg.edit(content="im a ME")
         await asyncio.sleep(2)
         await msg.edit(content="im a MEM")
-        await asyncio.sleep(3)
+        await asyncio.sleep(2)
         await msg.edit(content="im a MEME")
-        await asyncio.sleep(3)
+        await asyncio.sleep(2)
         await msg.edit(content="IM A MEME BOYZZZZ LMAOOOO XDDD")
         await asyncio.sleep(4)
         await msg.edit(content=f"lmao xd")   
@@ -52,6 +52,34 @@ class fun:
             await ctx.send("rip. you dont have enough perms. xd")
         except:
             await ctx.send(":x: Format: _msg (user tag) (messgae)")
+    
+    @commands.command()
+    async def serverinfo(self, ctx):
+        """bacically server info"""
+        guild = ctx.guild 
+        roles = [x.name for x in guild.roles] 
+        role_length = len(roles)
+        roles = ', '.join(roles)
+        channels = len(guild.channels)
+        time = str(guild.created_at.strftime("%b %m, %Y, %A, %I:%M %p")) 
+
+        embed = discord.Embed(description="-", title='Server Info', colour=passcolor)
+        if guild.icon_url:
+            embed.set_thumbnail(url=guild.icon_url)
+        else:
+            embed.set_thumbnail(url="https://cdn.discordapp.com/embed/avatars/0.png")
+        embed.add_field(name='__Server __', value=str(guild.name))
+        embed.add_field(name='__Server ID__', value=str(guild.id))
+        embed.add_field(name='__Owner__', value=str(guild.owner))
+        embed.add_field(name='__Owner ID__', value=guild.owner_id) 
+        embed.add_field(name='__Members__', value=str(guild.member_count))
+        embed.add_field(name='__Text/Voice Channels__', value=str(channels))
+        embed.add_field(name='__Region__', value='%s' % str(guild.region))
+        embed.add_field(name='__ Total Roles__', value='%s' % str(role_length))
+        embed.add_field(name='__Roles__', value='%s' % str(roles))
+        embed.set_footer(text='Created - %s' % time)
+
+        await ctx.send(embed=embed)
     
     
 def setup(bot):
