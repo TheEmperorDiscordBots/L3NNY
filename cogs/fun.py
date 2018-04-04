@@ -62,7 +62,7 @@ class fun:
         roles = ', '.join(roles)
         channels = len(guild.channels)
         time = str(guild.created_at.strftime("%b %m, %Y, %A, %I:%M %p"))         
-        em = discord.Embed(description= "-", title='Server Info', colour=0x00ff00)
+        em = discord.Embed(description= "-", title='Server Info', colour=0xffffff)
         em.set_thumbnail(url=guild.icon_url)
         em.add_field(name='__Server __', value=str(guild.name))
         em.add_field(name='__Owner__', value=str(guild.owner))
@@ -71,7 +71,6 @@ class fun:
         em.add_field(name='__Total Channels__', value=str(channels))
         em.add_field(name='__Region__', value='%s' % str(guild.region))
         em.add_field(name='__ Total Roles__', value='%s' % str(role_length))
-        em.add_field(name='__Roles__', value='%s' % str(roles))
         em.set_footer(text='Created - %s' % time)        
         await ctx.send(embed=em)
     
