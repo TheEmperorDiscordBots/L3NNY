@@ -111,12 +111,6 @@ async def purge(ctx, num: int = None):
 	except discord.Forbidden:
 	    await ctx.send("OoF! I don't have **Manage Messages** permission.")
 	
-               
-@bot.command()
-async def say(ctx, *, message:str):
-    """Speak as me!"""
-    await ctx.message.delete()
-    await ctx.send(message)      
 
 @bot.command()
 @commands.has_permissions(kick_members = True)
@@ -169,16 +163,7 @@ async def unmute(ctx, user: discord.Member = None):
 		await ctx.send(f"{user.mention} is now unmuted. Hope they learned their lesson.")
 	except discord.Forbidden:
 		await ctx.send(":x: Couldn't unmute the user. I need the **Manage Channels** permission.")
-  
-@bot.command()
-async def github(ctx):
-    """Get my github link"""
-    await ctx.send("Here is my github: http://bit.ly/2ogUv2T")
-
-@bot.command()
-async def lit(ctx):
-    """You lit? Use this command!"""
-    await ctx.send("**Only the lit people can listen to this! http://bit.ly/2r3aFyX**")	
+  	
 	
 	
 if __name__ == "__main__":
