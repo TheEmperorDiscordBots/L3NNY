@@ -54,8 +54,8 @@ class fun:
             await ctx.send(":x: Format: _msg (user tag) (messgae)")
     
     @commands.command()
-    async def serverinfo(self, ctx):
-        """Just server info"""
+    async def serverstats(self, ctx):
+        """Just server stats"""
         guild = ctx.guild
         roles = [x.name for x in guild.roles]
         role_length = len(roles)
