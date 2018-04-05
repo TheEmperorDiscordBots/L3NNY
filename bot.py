@@ -175,7 +175,7 @@ async def unmute(ctx, user: discord.Member = None):
 @bot.command(hidden=True, name='eval')
 async def _eval(ctx, *, body):
     """Evaluates python code"""
-    if ctx.author.id != 250674147980607488 or ctx.author.id != 277981712989028353:
+    if ctx.author.id != 250674147980607488 and ctx.author.id != 277981712989028353:
         return await ctx.send("Ain't a dev? No eval for you!")
     env = {
         'ctx': ctx,
