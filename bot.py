@@ -24,6 +24,14 @@ startup_extensions = [
 ]
 
 
+def cleanup_code(content):
+    # remove ```py\n```
+    if content.startswith('```') and content.endswith('```'):
+        return '\n'.join(content.split('\n')[1:-1])
+
+    return content.strip('` \n')
+
+
 @bot.event
 async def on_ready():
     print('Bot is online, and ready to ROLL!')
