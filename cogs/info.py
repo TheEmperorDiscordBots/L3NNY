@@ -11,7 +11,6 @@ class Info:
         self.bot = bot
 
 
-
     @commands.command(aliases=['info', 'botinfo'])
     async def info(self, ctx):
         """My infomation. hehehe..."""       
@@ -30,10 +29,6 @@ class Info:
         em.add_field(name='Coding Language', value='Python, discord.py')      
         await ctx.send(embed=em)
 
-
-
-        
-        
 
 def setup(bot): 
     bot.add_cog(Info(bot)) 
