@@ -75,5 +75,13 @@ class fun:
         await ctx.send(embed=em)
     
     
+    @commands.command()
+    async def roast(self, ctx, user: discord.Member = None):
+        '''Roast someone! If you suck at roasting them yourself.'''
+        lol = f"{user.mention}! " if user is not None else ""
+        roasts = ["likes https://pornhub.com/. I found it in his history", "is super gay.", "likes your mom.", "copies code from my creator.", "is Adolf Hitler's son.", "is 97% gay :gay_pride_flag:", "likes GayGrok Better then CodeGrok. https://discord.gg/3QAxxfM "]
+        await ctx.send(f"{lol} {random.choice(roasts)}")
+    
+    
 def setup(bot):
     bot.add_cog(fun(bot))
