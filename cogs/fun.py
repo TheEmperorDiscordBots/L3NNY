@@ -80,7 +80,7 @@ class fun:
         '''Expose someone!'''
         lol = f"{user.mention} " if user is not None else ""
         roasts = ["likes https://pornhub.com/. I found it in his history", "is super gay.", "likes your mom.", "copies code from my creator.", "is Adolf Hitler's son.", "is 97% gay :gay_pride_flag:", "likes GayGrok Better then CodeGrok. https://discord.gg/3QAxxfM "]
-        await ctx.send(f"{lol} {random.choice(roasts)}")
+        await ctx.send(f"{lol} {random.choice(exposes)}")
     
     
 def setup(bot):
