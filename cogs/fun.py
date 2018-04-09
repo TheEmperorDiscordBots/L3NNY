@@ -76,7 +76,7 @@ class fun:
         if user is None:
             return await ctx.send(":no_entry_sign: **You need to mention a user.**")
         roasts = ["likes https://pornhub.com/, I found it in his history", "is super gay.", "likes your mom.", "copies code from my creator.", "is Adolf Hitler's son.", "is 97% gay :gay_pride_flag:", "likes GayGrok Better then CodeGrok. https://discord.gg/3QAxxfM "]
-        await ctx.send(f"{user.mention} {random.choice(exposes)}")
+        await ctx.send(f"{user.mention} {random.choice(roasts)}")
     
     
 def setup(bot):
