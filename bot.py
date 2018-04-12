@@ -20,7 +20,8 @@ bot._last_result = None
 startup_extensions = [
 
     'cogs.fun'
-
+    'cogs.info'
+	
 ]
 
 
