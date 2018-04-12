@@ -31,3 +31,7 @@ class mod:
             await ctx.send("I don't have **Manage Messages** permission.")
         except commands.errors.MissingPermissions:
             await ctx.send("Cant delete messages without perms.")
+
+            
+def setup(bot): 
+    bot.add_cog(mod(bot))              
