@@ -11,22 +11,25 @@ class Info:
         self.bot = bot
 
 
-    @commands.command(aliases=['info', 'botinfo'])
-    async def info(self, ctx):
-        """My infomation. hehehe..."""       
-        color = discord.Color(value=0xffffff)
-        em = discord.Embed(color=color, title='Info')
-        em.description = "My sweet, sweet info!"
-        em.set_thumbnail(url="https://bit.ly/2q4pS0z")        
-        em.add_field(name='Owner', value='TheEmperor™#2644')
-        em.add_field(name='Developer(s)', value='dat eric kang boi#0847')
-        em.add_field(name='Number of Servers', value=f'{len(self.bot.guilds)} servers') 
-        em.add_field(name='Version', value='0.1.0')
-        em.add_field(name='Start Date', value='2/13/2018')
-        em.add_field(name='Region', value='North America')
-        em.add_field(name='Code Platform', value='GitHub')
-        em.add_field(name='Hosting Platform', value='Heroku')
-        em.add_field(name='Coding Language', value='Python, discord.py')      
+    @commands.command()
+    async def serverstats(self, ctx):
+        """Just server stats"""
+        guild = ctx.guild
+        roles = [x.name for x in guild.roles]
+        role_length = len(roles)
+        roles = ', '.join(roles)
+        channels = len(guild.channels)
+        time = str(guild.created_at.strftime("%b %m, %Y, %A, %I:%M %p"))         
+        em = discord.Embed(description= "The Statistics for this server", title='Server Stats', colour=0xffffff)
+        em.set_thumbnail(url=guild.icon_url)
+        em.add_field(name='__Server __', value=str(guild.name))
+        em.add_field(name='__Owner__', value=str(guild.owner))
+        em.add_field(name='__Owner ID__', value=guild.owner_id) 
+        em.add_field(name='__Members__', value=str(guild.member_count))
+        em.add_field(name='__Total Channels__', value=str(channels))
+        em.add_field(name='__Region__', value='%s' % str(guild.region))
+        em.add_field(name='__ Total Roles__', value='%s' % str(role_length))
+        em.set_footer(text='Created - %s' % time)        
         await ctx.send(embed=em)
 
 
