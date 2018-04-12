@@ -106,20 +106,6 @@ async def upvote(ctx):
     """Upvote me!"""
     await ctx.send ("Upvote me here! https://discordbots.org/bot/414456650519412747") 
 	
-
-@bot.command()
-@commands.has_permissions(kick_members = True)
-async def kick(ctx, user: discord.Member = None):
-	"""Kicks a member from the server."""
-	if user is None:
-		await ctx.send("Please tag the rebel to kick them!")
-	else:
-		try:
-			await user.kick()
-			await ctx.send(f"The administrator is putting on his boot. He kicks {user.mention} in the rear end. {user.mention} got kicked!.")
-		except discord.Forbidden:
-			await ctx.send("OoF! I'm missing **kick** permmision.")
-	
 	
 @bot.command()
 @commands.has_permissions(ban_members = True)
