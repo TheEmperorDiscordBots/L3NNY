@@ -31,6 +31,18 @@ class mod:
         except commands.errors.MissingPermissions:
             await ctx.send("Cant delete messages without perms.")
 
-            
+    @commands.command()
+    @commands.has_permissions(kick_members = True)
+    async def kick(self, ctx, user: discord.Member):
+        """Kicks a member out of your server."""
+        try:
+            await user.kick()
+            await ctx.channel.send(f"The administrator is putting their boot on. They kick the boot into {user.mention}'s bottom. {user.mention} has been kicked. ")
+        except discord.Forbidden:
+            await ctx.send("00F! I need the **Kick Members** Permissions.")
+        except discord.ext.commands.MissingPermissions:
+            await ctx.send("Can't kick people without permissions.")
+
+
 def setup(bot): 
     bot.add_cog(mod(bot))              
