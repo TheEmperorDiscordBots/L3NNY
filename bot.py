@@ -105,27 +105,6 @@ async def say(ctx, *, message:str):
 async def upvote(ctx):
     """Upvote me!"""
     await ctx.send ("Upvote me here! https://discordbots.org/bot/414456650519412747") 
- 
-	
-
-@bot.command()
-@commands.has_permissions(manage_messages = True)
-async def purge(ctx, num: int = None):
-	"""Deletes messages. _purge [number].""" 
-	try: 
-	    if num is None:
-	        await ctx.send("How many messages would you like me to delete? Usage: _purge [number]")
-	    else:
-	        try:
-	            float(num)
-	        except ValueError:
-	            return await ctx.send("The number is invalid. Make sure it is a number...")
-	        await ctx.channel.purge(limit=num+1)
-	        msg = await ctx.send(f"Done ( ͡° ͜ʖ ͡°)")
-	        await asyncio.sleep(3)
-	        await msg.delete()
-	except discord.Forbidden:
-	    await ctx.send("OoF! I don't have **Manage Messages** permission.")
 	
 
 @bot.command()
