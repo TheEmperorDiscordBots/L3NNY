@@ -39,10 +39,23 @@ class mod:
             await user.kick()
             await ctx.channel.send(f"The administrator is putting their boot on. They kick the boot into {user.mention}'s bottom. {user.mention} has been kicked. ")
         except discord.Forbidden:
-            await ctx.send("00F! I need the **Kick Members** Permissions.")
+            await ctx.send("00F! I need the **Kick Members** permission.")
         except discord.ext.commands.MissingPermissions:
             await ctx.send("Can't kick people without permissions.")
 
 
+    @commands.command()
+    @commands.has_permissions(ban_members = True)
+    async def ban(self, ctx, user: discord.Member):
+        """Ban a member out of your server."""
+        try:
+            await user.ban()
+            await ctx.channel.send(f"The administrator is getting the ban hammer out of the case. He swings it at {user.mention}. Ouch! {user.mention} has been banned.")
+        except discord.Forbidden:
+            await ctx.send("00F! I need the **Ban Members** permission.")
+        except discord.ext.commands.MissingPermissions:
+            await ctx.send("Can't ban people without permissions.")         
+            
+            
 def setup(bot): 
     bot.add_cog(mod(bot))              
