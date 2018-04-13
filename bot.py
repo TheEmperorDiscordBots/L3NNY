@@ -105,20 +105,7 @@ async def say(ctx, *, message:str):
 async def upvote(ctx):
     """Upvote me!"""
     await ctx.send ("Upvote me here! https://discordbots.org/bot/414456650519412747") 
-	
-	
-@bot.command()
-@commands.has_permissions(ban_members = True)
-async def ban(ctx, user: discord.Member = None):
-	"""Bans a member from the server."""
-	if user is None:
-		await ctx.send("Please tag that **intense** rebel to ban!")
-	else:
-		try:
-			await user.ban()
-			await ctx.send(f"The administrator is getting the ban hammer out of the case. He swings it at {user.mention}. Ouch! {user.mention} has been banned.")
-		except discord.Forbidden:
-			await ctx.send("OOOOF! You didn't give me the **ban** permission.")
+
 
 @bot.command()
 @commands.has_permissions(ban_members=True)
