@@ -125,6 +125,21 @@ class fun:
             return
         await ctx.send('​`​`​`' + message + '​`​`​`')
         
-    
+        
+    @commands.command(aliases=['yt', 'vid', 'video'])
+    async def yt(self, ctx, *, search):
+        """Search for videos on YouTube"""
+        search = search.replace(' ', '+').lower()
+        response = requests.get(f"https://www.youtube.com/results?search_query={search}").text
+        result = BeautifulSoup(response, "lxml")
+        dir_address = f"{result.find_all(attrs={'class': 'yt-uix-tile-link'})[0].get('href')}"
+        output=f"**Top Result:**\nhttps://www.youtube.com{dir_address}"
+        try:
+            await ctx.send(output)
+            await ctx.message.delete()
+        except discord.Forbidden:
+            pass
+        
+           
 def setup(bot):
     bot.add_cog(fun(bot))
