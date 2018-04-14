@@ -116,7 +116,7 @@ class fun:
         await ctx.send(embed=em)
 
         
-   @commands.command()
+    @commands.command()
     async def ascii(self, ctx, *, text):
         """Usage: _ascii [text]"""
         async with aiohttp.ClientSession() as session:
