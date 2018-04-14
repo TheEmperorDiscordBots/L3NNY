@@ -82,6 +82,16 @@ class fun:
         em.set_footer(text='Created - %s' % time)        
         await ctx.send(embed=em)
 
+        
+    @commands.command()
+    async def ascii(self, ctx, *, text):
+        async with ctx.session.get(f"http://artii.herokuapp.com/make?text={urllib.parse.quote_plus(text)}") as f:
+            message = await f.text()
+        if len('​`​`​`' + message + '​`​`​`') > 2000:
+            await ctx.send('Your ASCII is too long!')
+            return
+        await ctx.send('​`​`​`' + message + '​`​`​`')
+        
     
 def setup(bot):
     bot.add_cog(fun(bot))
