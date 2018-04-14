@@ -116,14 +116,15 @@ class fun:
         await ctx.send(embed=em)
 
         
-    @commands.command()
+   @commands.command()
     async def ascii(self, ctx, *, text):
-        async with ctx.session.get(f"http://artii.herokuapp.com/make?text={urllib.parse.quote_plus(text)}") as f:
-            message = await f.text()
-        if len('​`​`​`' + message + '​`​`​`') > 2000:
-            await ctx.send('Your ASCII is too long!')
-            return
-        await ctx.send('​`​`​`' + message + '​`​`​`')
+        """Usage: _ascii [text]"""
+        async with aiohttp.ClientSession() as session:
+            async with session.get(f"http://artii.herokuapp.com/make?text={urllib.parse.quote_plus(text)}") as resp:
+                message = await resp.text()
+                if len('​`​`​`' + message + '​`​`​`') > 2000:
+                    return await ctx.send('Your ASCII is too long!')
+                await ctx.send('​`​`​`' + message + '​`​`​`')
         
         
     @commands.command(aliases=['yt', 'vid', 'video'])
