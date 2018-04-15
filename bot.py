@@ -110,19 +110,6 @@ async def upvote(ctx):
 
 @bot.command()
 @commands.has_permissions(ban_members=True)
-async def mute(ctx, user: discord.Member = None):
-    '''Mutes a user'''
-    if user is None:
-    	return await ctx.send("Please tag that annoying user to mute them!")
-    try:
-        await ctx.channel.set_permissions(user, send_messages=False)
-        await ctx.send(f"{user.mention} has been muted. FINALLY!")
-    except discord.Forbidden:
-        return await ctx.send(":x: I don't have **Manage Channel** permmition.")  
-
-
-@bot.command()
-@commands.has_permissions(ban_members=True)
 async def unmute(ctx, user: discord.Member = None):
 	'''Un-mutes a user'''
 	if user is None:
