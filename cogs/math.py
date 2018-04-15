@@ -18,7 +18,7 @@ class Math:
         if num is None:
             await ctx.send("_add [number] [number]")
         else:
-            await ctx.send(num + num2)
+            await ctx.send(```num + num2```)
                 
                 
     @commands.command()
@@ -27,7 +27,7 @@ class Math:
         if num is None:
             await ctx.send("_subtract [number] [number]")
         else:
-            await ctx.send(num - num2)
+            await ctx.send(```num - num2```)
                 
                 
     @commands.command()
@@ -36,7 +36,7 @@ class Math:
         if num is None:
             await ctx.send("_multiply [number] [number]")
         else:
-            await ctx.send(num * num2)
+            await ctx.send(```num * num2```)
                 
                 
     @commands.command()
@@ -45,7 +45,7 @@ class Math:
         if num is None:
             await ctx.send("_divide [number] [number]")
         else:
-            await ctx.send(num / num2)
+            await ctx.send(```num / num2```)
             
             
 def setup(bot): 
