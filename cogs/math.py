@@ -14,7 +14,7 @@ class Math:
                                               
     @commands.command()
     async def add(self, ctx, num: int, num2: int):
-        '''ADD EM UP! Yep.'''
+        '''Add numbers'''
         if num is None:
             await ctx.send("_add [number] [number]")
         else:
@@ -46,3 +46,7 @@ class Math:
             await ctx.send("_divide [number] [number]")
         else:
             await ctx.send(num / num2)
+            
+            
+def setup(bot): 
+    bot.add_cog(Math(bot))  
