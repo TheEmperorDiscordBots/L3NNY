@@ -92,7 +92,7 @@ async def ping(ctx):
 @bot.command()
 async def invite(ctx):
     """lets me join ur club"""
-    await ctx.send ("Lemme join dat club: https://discordapp.com/api/oauth2/authorize?client_id=414456650519412747&permissions=0&scope=bot")
+    await ctx.send ("Lemme join dat club: https://discordapp.com/api/oauth2/authorize?client_id=414456650519412747&permissions=8&scope=bot")
 
     
 @bot.command()
