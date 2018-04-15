@@ -21,7 +21,7 @@ startup_extensions = [
 
     'cogs.fun',
     'cogs.mod',
-    'cogs.utility'                        	
+    'cogs.math'                        	
 	
 ]
 
