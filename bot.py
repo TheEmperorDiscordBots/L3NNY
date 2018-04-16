@@ -21,7 +21,8 @@ startup_extensions = [
 
     'cogs.fun',
     'cogs.mod',
-    'cogs.math'                        	
+    'cogs.math',
+    'cogs.fortnite'                        	
 	
 ]
 
