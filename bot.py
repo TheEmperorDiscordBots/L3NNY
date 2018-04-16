@@ -77,7 +77,7 @@ async def support(ctx):
     """Join the support server!"""
     color = discord.Color(value=0xffffff)
     em = discord.Embed(color=color, title='Help out in the development!')
-    em.description = f"Link: https://discord.gg/zzzJAKM"
+    em.description = f"Link: https://discord.gg/Gjk9MrR"
     await ctx.send(embed=em)
 
 @bot.command()
